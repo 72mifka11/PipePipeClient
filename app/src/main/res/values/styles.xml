@@ -99,32 +99,32 @@
         <item name="colorPrimary">@color/light_youtube_primary_color</item>
         <item name="colorPrimaryDark">@color/light_youtube_primary_color</item>
         <item name="colorAccent">@color/light_youtube_accent_color</item>
-        <item name="android:windowBackground">@color/light_dialog_background_color</item>
-        <item name="windowBackground">@color/light_dialog_background_color</item>
+        <item name="android:windowBackground">@drawable/dialog_background_light</item>
+        <item name="windowBackground">@drawable/dialog_background_light</item>
     </style>
 
     <style name="DarkDialogTheme" parent="Theme.AppCompat.DayNight.Dialog">
         <item name="colorPrimary">@color/dark_youtube_primary_color</item>
         <item name="colorPrimaryDark">@color/dark_youtube_primary_color</item>
         <item name="colorAccent">@color/dark_youtube_accent_color</item>
-        <item name="android:windowBackground">@color/dark_dialog_background_color</item>
-        <item name="windowBackground">@color/dark_dialog_background_color</item>
+        <item name="android:windowBackground">@drawable/dialog_background_dark</item>
+        <item name="windowBackground">@drawable/dialog_background_dark</item>
     </style>
 
     <style name="LightDialogMinWidthTheme" parent="Theme.AppCompat.DayNight.Dialog.MinWidth">
         <item name="colorPrimary">@color/light_youtube_primary_color</item>
         <item name="colorPrimaryDark">@color/light_youtube_primary_color</item>
         <item name="colorAccent">@color/light_youtube_accent_color</item>
-        <item name="android:windowBackground">@color/light_dialog_background_color</item>
-        <item name="windowBackground">@color/light_dialog_background_color</item>
+        <item name="android:windowBackground">@drawable/dialog_background_light</item>
+        <item name="windowBackground">@drawable/dialog_background_light</item>
     </style>
 
     <style name="DarkDialogMinWidthTheme" parent="Theme.AppCompat.DayNight.Dialog.MinWidth">
         <item name="colorPrimary">@color/dark_youtube_primary_color</item>
         <item name="colorPrimaryDark">@color/dark_youtube_primary_color</item>
         <item name="colorAccent">@color/dark_youtube_accent_color</item>
-        <item name="android:windowBackground">@color/dark_dialog_background_color</item>
-        <item name="windowBackground">@color/dark_dialog_background_color</item>
+        <item name="android:windowBackground">@drawable/dialog_background_dark</item>
+        <item name="windowBackground">@drawable/dialog_background_dark</item>
     </style>
 
     <!-- Settings -->
@@ -161,6 +161,7 @@
         <item name="android:windowIsFloating">false</item>
         <item name="android:statusBarColor">@android:color/transparent</item>
         <item name="android:navigationBarColor">@android:color/white</item>
+        <item name="bottomSheetStyle">@style/BottomSheetStyle.Light</item>
     </style>
     <style name="BottomSheetDialogTheme.Light.Base" parent="BottomSheetDialogTheme.Light.V19"/>
 
@@ -168,6 +169,7 @@
         <item name="android:windowIsFloating">false</item>
         <item name="android:statusBarColor">@android:color/transparent</item>
         <item name="android:navigationBarColor">@color/dark_bottom_sheet_color</item>
+        <item name="bottomSheetStyle">@style/BottomSheetStyle.Dark</item>
     </style>
     <style name="BottomSheetDialogTheme.Dark.Base" parent="BottomSheetDialogTheme.Dark.V19"/>
 
@@ -176,7 +178,14 @@
         <item name="bottomSheetStyle">@style/BottomSheetStyle.Black</item>
     </style>
     <style name="BottomSheetStyle.Black" parent="Widget.Design.BottomSheet.Modal">
-        <item name="android:background">@color/black_bottom_sheet_color</item>
+        <item name="android:background">@drawable/bottom_sheet_background_black</item>
+    </style>
+
+    <style name="BottomSheetStyle.Light" parent="Widget.Design.BottomSheet.Modal">
+        <item name="android:background">@drawable/bottom_sheet_background_light</item>
+    </style>
+    <style name="BottomSheetStyle.Dark" parent="Widget.Design.BottomSheet.Modal">
+        <item name="android:background">@drawable/bottom_sheet_background_dark</item>
     </style>
 
 </resources>
