@@ -1,5 +1,6 @@
 package org.schabi.newpipe.info_list.holder;
 
+import android.graphics.drawable.GradientDrawable;
 import android.text.TextUtils;
 import android.view.View;
 import android.view.ViewGroup;
@@ -73,6 +74,13 @@ public class StreamInfoItemHolder extends InfoItemHolder {
         itemAdditionalDetails = itemView.findViewById(R.id.itemAdditionalDetails);
     }
 
+    private void setDurationBackground(final int color) {
+        final GradientDrawable pill = new GradientDrawable();
+        pill.setColor(color);
+        pill.setCornerRadius(10 * itemView.getResources().getDisplayMetrics().density);
+        itemDurationView.setBackground(pill);
+    }
+
     @Override
     public void updateFromItem(final InfoItem infoItem,
                                final HistoryRecordManager historyRecordManager) {
@@ -86,7 +94,7 @@ public class StreamInfoItemHolder extends InfoItemHolder {
 
         if (item.requiresMembership()) {
             itemDurationView.setText(R.string.paid_video);
-            itemDurationView.setBackgroundColor(ContextCompat.getColor(itemBuilder.getContext(),
+            setDurationBackground(ContextCompat.getColor(itemBuilder.getContext(),
                     R.color.paid_video_background_color));
             itemDurationView.setVisibility(View.VISIBLE);
             final StreamStateEntity paidState = historyRecordManager.loadStreamState(infoItem)
@@ -101,7 +109,7 @@ public class StreamInfoItemHolder extends InfoItemHolder {
             }
         } else if (item.getDuration() > 0) {
             itemDurationView.setText(Localization.getDurationString(item.getDuration()));
-            itemDurationView.setBackgroundColor(ContextCompat.getColor(itemBuilder.getContext(),
+            setDurationBackground(ContextCompat.getColor(itemBuilder.getContext(),
                     R.color.duration_background_color));
             itemDurationView.setVisibility(View.VISIBLE);
 
@@ -118,7 +126,7 @@ public class StreamInfoItemHolder extends InfoItemHolder {
         } else if (item.getStreamType() == StreamType.LIVE_STREAM
                 || item.getStreamType() == StreamType.AUDIO_LIVE_STREAM) {
             itemDurationView.setText(R.string.duration_live);
-            itemDurationView.setBackgroundColor(ContextCompat.getColor(itemBuilder.getContext(),
+            setDurationBackground(ContextCompat.getColor(itemBuilder.getContext(),
                     R.color.live_duration_background_color));
             itemDurationView.setVisibility(View.VISIBLE);
             itemProgressView.setVisibility(View.GONE);
