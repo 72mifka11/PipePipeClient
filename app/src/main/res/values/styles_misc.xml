@@ -104,6 +104,16 @@
         <item name="cornerSize">50%</item>
     </style>
 
+    <style name="CircleAvatarImageView">
+        <item name="cornerFamily">rounded</item>
+        <item name="cornerSize">50%</item>
+    </style>
+
+    <style name="RoundedCardThumbnailImageView">
+        <item name="cornerFamily">rounded</item>
+        <item name="cornerSize">20dp</item>
+    </style>
+
     <style name="RoundedThumbnailImageView">
         <item name="cornerFamily">rounded</item>
         <item name="cornerSize">12dp</item>

@@ -1,15 +1,15 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <!-- YouTube -->
-    <color name="light_youtube_primary_color">#4F5BD5</color>
-    <color name="light_youtube_dark_color">#3A44A8</color>
-    <color name="light_youtube_accent_color">#4F5BD5</color>
-    <color name="light_youtube_statusbar_color">#4F5BD5</color>
+    <color name="light_youtube_primary_color">#6750A4</color>
+    <color name="light_youtube_dark_color">#4F378B</color>
+    <color name="light_youtube_accent_color">#6750A4</color>
+    <color name="light_youtube_statusbar_color">#6750A4</color>
 
-    <color name="dark_youtube_primary_color">#2F3680</color>
-    <color name="dark_youtube_dark_color">#232866</color>
-    <color name="dark_youtube_accent_color">#B6BCFF</color>
-    <color name="dark_youtube_statusbar_color">#2F3680</color>
+    <color name="dark_youtube_primary_color">#1D1A22</color>
+    <color name="dark_youtube_dark_color">#1D1A22</color>
+    <color name="dark_youtube_accent_color">#D0BCFF</color>
+    <color name="dark_youtube_statusbar_color">#1D1A22</color>
 
     <!-- SoundCloud -->
     <color name="light_soundcloud_primary_color">#f57c00</color>
