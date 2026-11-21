@@ -86,7 +86,7 @@ public class MainFragment extends BaseFragment
 
         prefs = PreferenceManager.getDefaultSharedPreferences(requireContext());
         mainTabsPositionKey = getString(R.string.main_tabs_position_key);
-        mainTabsPositionBottom = prefs.getBoolean(mainTabsPositionKey, false);
+        mainTabsPositionBottom = prefs.getBoolean(mainTabsPositionKey, true);
 
     }
 
@@ -129,7 +129,7 @@ public class MainFragment extends BaseFragment
             setupTabs();
         }
 
-        final boolean newMainTabsPosition = prefs.getBoolean(mainTabsPositionKey, false);
+        final boolean newMainTabsPosition = prefs.getBoolean(mainTabsPositionKey, true);
         if (mainTabsPositionBottom != newMainTabsPosition) {
             mainTabsPositionBottom = newMainTabsPosition;
             updateTabLayoutPosition();
@@ -240,8 +240,12 @@ public class MainFragment extends BaseFragment
         tabLayout.setLayoutParams(tabParams);
         viewPager.setLayoutParams(pagerParams);
 
-        tabLayout.setBackgroundColor(ThemeHelper.resolveColorFromAttr(requireContext(),
-                bottom ? android.R.attr.windowBackground : R.attr.colorPrimary));
+        if (bottom) {
+            tabLayout.setBackgroundResource(R.drawable.bottom_bar_bg);
+        } else {
+            tabLayout.setBackgroundColor(ThemeHelper.resolveColorFromAttr(requireContext(),
+                    R.attr.colorPrimary));
+        }
 
         final int iconColor = bottom
                 ? ThemeHelper.resolveColorFromAttr(requireContext(), android.R.attr.colorAccent)
